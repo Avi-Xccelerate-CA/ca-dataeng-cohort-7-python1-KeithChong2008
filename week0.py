@@ -11,8 +11,27 @@
 # input: [500, 1, 2, 3, 4, 5]
 #expected output: "No medicine given"
 # HINT: using % operator to find remainder may be helpful
+import math
 def dose(needs):
-    #YOUR SOLUTION STARTS HERE
+    total = sum(needs)
+    if total >= 500:
+        return "No medicine given"
+    ##
+
+    treatment = []
+    for need in needs:
+        if(need >250):
+            return "No medicine given"
+        round_up = math.ceil(need/10) * 10
+        vitamins = round_up /10
+        injections = round_up - need
+        treatment.append((math.ceil(vitamins), injections))
+    
+    return treatment
+
+
+
+
 
     #YOUR SOLUTION ENDS HERE
 
